@@ -1,0 +1,10 @@
+<p>weather-details works!</p>
+
+<div *ngIf="!res" class="loader p-3 border m-2">
+    <app-loader></app-loader>
+</div>
+
+
+<div *ngIf="res" class="p-3 border m-2">
+    temperature: {{res.data.values.temperature}}
+</div>
