@@ -1,0 +1,32 @@
+.search-input-warapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d8d8d8;
+  border-radius: 20px;
+  input {
+    border-width: 0;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 1em;
+    font-size: 1.2rem;
+    flex-grow: 1;
+    &::placeholder {
+      font-size: 0.9rem;
+      color: #a1a1a1;
+    }
+    &:focus {
+      border-width: 0;
+      outline: none;
+    }
+  }
+
+  &:has(input:focus){
+    border-color: var(--indigo-dye);
+  }
+  
+}

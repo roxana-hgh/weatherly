@@ -10,6 +10,8 @@ import { SelectLocationComponent } from './components/select-location/select-loc
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoaderComponent } from './components/shared/loader/loader.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { LoaderComponent } from './components/shared/loader/loader.component';
     WeatherDetailsComponent,
     NotFoundComponent,
     SelectLocationComponent,
-    LoaderComponent
+    LoaderComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

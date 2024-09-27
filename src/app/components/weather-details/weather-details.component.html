@@ -1,10 +1,99 @@
-<p>weather-details works!</p>
-
-<div *ngIf="!res" class="loader p-3 border m-2">
-    <app-loader></app-loader>
+<div *ngIf="!res" class="loader p-4 my-5 m-2">
+  <app-loader></app-loader>
 </div>
 
+<div *ngIf="res" class="p-1 m-2">
+  <div class="d-flex flex-column justify-content-between align-items-start">
+    <span class="location fs-2 text-muted fw-bold">{{
+      location | titlecase
+    }}</span>
+    <span class="date small text-muted">
+      {{ res.data.time | date }}
+      <!-- <br>{{res.data.time | date:'shortTime'}} -->
+    </span>
+  </div>
 
-<div *ngIf="res" class="p-3 border m-2">
-    temperature: {{res.data.values.temperature}}
+  <div class="d-flex w-100 flex-column flex-lg-row-reverse">
+    <div class="d-flex justify-content-end align-items-center my-2 py-4">
+      <span class="weather-code-img my-3">
+        <!-- {{res.data.values.weatherCode }}  -->
+        <img
+          [src]="statusCodesData[res.data.values.weatherCode].icon"
+          width="150px"
+          alt=""
+        />
+      </span>
+    </div>
+    <div class="details">
+      <div class="weather-main-infos">
+        <span class="fw-bold d-block temperature">
+          {{ res.data.values.temperature | number : "1.0-0" }}&deg;{{
+            temperatureUnit
+          }}
+        </span>
+        <span class="d-block mb-3 fs-2 fw-bold weather-status-desc">
+          {{ statusCodesData[res.data.values.weatherCode].title }} 
+          
+        </span>
+        <span class="w-auto fs-6 temp-feels border rounded py-1 px-2">
+          Feels like
+          {{ res.data.values.temperatureApparent | number : "1.0-0" }}&deg;{{
+            temperatureUnit
+          }}
+        </span>
+      </div>
+
+      <div class="weather-details row justify-content-between gx-1 gy-4 my-4">
+        <div class="col-6">
+          <div class="details-item">
+            <div class="item-icon"><i class="bi bi-moisture"></i></div>
+            <div class="item-info">
+              <span class="fw-bold small text-muted"> Humidity Percent </span>
+              <span class="fs-5 fw-bold d-block"
+                >{{ res.data.values.humidity | number : "1.0-0" }} %</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="details-item">
+            <div class="item-icon"><i class="bi bi-wind"></i></div>
+            <div class="item-info">
+              <span class="fw-bold small text-muted"> wind Speed </span>
+              <span class="fs-5 fw-bold d-block"
+                >{{ res.data.values.windSpeed | number : "1.0-0" }} km/h</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="details-item">
+            <div class="item-icon">
+              <i class="bi bi-arrows-collapse-vertical"></i>
+            </div>
+            <div class="item-info">
+              <span class="fw-bold small text-muted"> Surface pressure </span>
+              <span class="fs-5 fw-bold d-block"
+                >{{
+                  res.data.values.pressureSurfaceLevel | number : "1.0-0"
+                }}
+                mb</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="details-item">
+            <div class="item-icon"><i class="bi bi-brightness-high"></i></div>
+            <div class="item-info">
+              <span class="fw-bold small text-muted"> UV Index </span>
+              <span class="fs-5 fw-bold d-block"
+                >{{ res.data.values.uvHealthConcern }} of 11</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

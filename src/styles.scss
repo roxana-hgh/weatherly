@@ -3,7 +3,7 @@
     --princeton-orange: #ff9914ff;
     --berkeley-blue: #002b5bff;
     --indigo-dye: #034078ff;
-    --silver-lake-blue: #778da9ff;
+    --silver-lake-blue: #778da9;
     --platinum: #e0e1ddff;
     --gradient: linear-gradient(63deg, rgba(0,125,252,1) 31%, rgba(3,64,120,1) 97%);
     --theme-text-primary: #000000;
@@ -77,16 +77,24 @@
     box-sizing: border-box;
   }
   
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
   
-  
-  
-  .offcanvas.offcanvas-start {
-    width: 350px;
-  }
-  
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.offcanvas.offcanvas-start {
+  width: 350px;
+}
+
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WeatherForcastService } from '../../services/weather-forcast.service';
+import { Settings } from '../../setting';
 
 @Component({
   selector: 'app-weather-details',
@@ -10,6 +11,9 @@ import { WeatherForcastService } from '../../services/weather-forcast.service';
 export class WeatherDetailsComponent implements OnInit {
   location!: string;
   res!: any;
+  temperatureUnit = "c"
+
+  statusCodesData = Settings.weatherCode
 
   constructor(
     private weatherService: WeatherForcastService,
@@ -45,5 +49,39 @@ export class WeatherDetailsComponent implements OnInit {
         this.res = res;
         console.log(res);
       });
+
+  //   this.res = {
+  //     "data": {
+  //         "time": "2024-09-13T11:05:00Z",
+  //         "values": {
+  //             "cloudBase": null,
+  //             "cloudCeiling": null,
+  //             "cloudCover": 9,
+  //             "dewPoint": 2.63,
+  //             "freezingRainIntensity": 0,
+  //             "humidity": 13,
+  //             "precipitationProbability": 0,
+  //             "pressureSurfaceLevel": 887.82,
+  //             "rainIntensity": 0,
+  //             "sleetIntensity": 0,
+  //             "snowIntensity": 0,
+  //             "temperature": 35.13,
+  //             "temperatureApparent": 32.57,
+  //             "uvHealthConcern": 1,
+  //             "uvIndex": 4,
+  //             "visibility": 16,
+  //             "weatherCode": 8000,
+  //             "windDirection": 140.63,
+  //             "windGust": 7.81,
+  //             "windSpeed": 3.31
+  //         }
+  //     },
+  //     "location": {
+  //         "lat": 35.48344421386719,
+  //         "lon": 51.41046142578125,
+  //         "name": "استان تهران, ایران",
+  //         "type": "administrative"
+  //     }
+  // }
   }
 }

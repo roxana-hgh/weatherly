@@ -1,3 +1,37 @@
-<p>select-location works!</p>
-<input type="text" [(ngModel)]="location">
-<button (click)="gotoLocationDetails()">show weather</button>
+<div class="">
+  <form [formGroup]="locationForm" (submit)="gotoLocationDetails()" action="">
+    <div class="search-input-warapper my-4">
+      <input
+        placeholder="search for a location"
+        type="text"
+        formControlName="location"
+      />
+      <button class="btn" type="submit" >
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="locations-sec my-3">
+  <div *ngIf="locations" class="locations">
+    <div *ngIf="locations.length" class="locations-list"></div>
+    <div *ngIf="!locations.length" class="locations-empty p-2">
+      <div
+        class="d-flex flex-column justify-content-center align-items-center p-4 my-3"
+      >
+        <img
+          class="img-fluid"
+          width="50px"
+          src="assets/images/location-globe.png"
+          alt="no location"
+        />
+        <p class="text-muted small my-2">no saved location yet!</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!locations" class="loader p-3 border m-2">
+    <app-loader></app-loader>
+  </div>
+</div>

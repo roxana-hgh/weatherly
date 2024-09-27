@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherForcastService } from '../../services/weather-forcast.service';
-import { FormGroup } from '@angular/forms';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,17 +9,26 @@ import { Router } from '@angular/router';
   styleUrl: './select-location.component.scss'
 })
 export class SelectLocationComponent implements OnInit {
-  location!: string;
 
+  locations :Location[] = [];
+  locationForm:FormGroup = this.fb.group({
+    location: ['', Validators.required],
+  });
+  location!: string 
 
   constructor(
     private weatherService: WeatherForcastService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder,
 
   ) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
 
   gotoLocationDetails() {
+    this.location =  this.locationForm.value.location;
+    
     if (this.location) {
       this.router.navigate(['/weather', this.location]);
      
