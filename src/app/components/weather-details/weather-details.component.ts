@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WeatherForcastService } from '../../services/weather-forcast.service';
 import { Settings } from '../../setting';
-import { NgbNavModule, NgbNavChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-weather-details',
   templateUrl: './weather-details.component.html',
