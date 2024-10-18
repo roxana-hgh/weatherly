@@ -56,7 +56,7 @@ export class WeatherForcastService {
   
     const body = {
       location: location,
-      fields: ['temperature', 'weatherCode', 'precipitationProbability'],
+      fields: ['temperature', 'weatherCodeDay', 'weatherCodeNight', 'precipitationProbability'],
       units: units,
       timesteps: ['1d'],
       startTime: 'now',
