@@ -1,27 +1,74 @@
-# Weatherly
+# Weatherly ☀️🌧️
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+**Weatherly** is a simple and elegant weather app built with **Angular**.  
+It fetches real-time weather data based on a selected location and displays hourly and daily forecasts in a mobile-friendly layout.
 
-## Development server
+## 🌐 Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+🔗 [View the App](https://roxana-hgh.github.io/weatherly/)
 
-## Code scaffolding
+## 🧰 Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- Bootstrap & ng-bootstrap
+- Tomorrow.io API
 
-## Build
+## ✨ Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- 🌍 Get current weather based on location
+- 🕐 12-hour hourly forecast
+- 📅 7-day daily forecast
+- 🌡️ Detailed weather data:
+  - Temperature
+  - Feels like
+  - Weather description
+  - Wind speed
+  - UV index
+  - Humidity
+  - Pressure
 
-## Running unit tests
+## 📱 UI Design
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Mobile-first responsive design
+- Clean and minimal interface for better user experience
 
-## Running end-to-end tests
+## 🚀 Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To run the project locally:
 
-## Further help
+```bash
+# Clone the repository
+git clone https://github.com/roxana-hgh/weatherly.git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Navigate into the project directory
+cd weatherly
+
+# Install dependencies
+npm install
+
+# Run the development server
+ng serve
+```
+Open http://localhost:4200 in your browser.
+
+## 🔑 API Key ##
+This project uses **Tomorrow.io** for weather data.
+To run it locally, you’ll need to:
+
+Sign up and get a free API key from Tomorrow.io.
+
+Add your API key to the environment file:
+
+```ts
+// environment.ts
+export const environment = {
+  production: false,
+  apiKey: 'YOUR_TOMORROW_IO_API_KEY'
+};
+```
+
+## 📌 Notes ##
+UI is optimized for mobile devices
+
+Currently supports manual location entry
+
