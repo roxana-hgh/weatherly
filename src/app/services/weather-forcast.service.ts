@@ -1,5 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class WeatherForcastService {
   private forcastEndpoint = '/weather/forecast';
   private realtimeWeatherEndpoint = '/weather/realtime';
   private TimelineWeatherEndpoint = '/timelines';
-  private apikey = '?apikey=35iUf9QxeY863gy7C2ipkRpPQSgSYlaK';
+  private apikey = '?apikey=' + environment.apikey;
 
   get_WeatherForcast(
     location: string,
